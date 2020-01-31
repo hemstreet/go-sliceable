@@ -21,7 +21,7 @@ func TestMapSlice(t *testing.T) {
     var ids []int
 
     if err := MapSlice(officers, func(thing interface{}) interface{} {
-       return thing.(Officer).ID
+        return thing.(Officer).ID
     }, &ids); err != nil {
         t.Errorf("Received error %+v", err)
     }
@@ -112,7 +112,7 @@ func TestFilter(t *testing.T) {
     var filteredPilots []Pilot
 
     if err := Filter(pilots, func(thing interface{}) bool {
-        return thing.(Pilot).Faction  == "Empire"
+        return thing.(Pilot).Faction == "Empire"
     }, &filteredPilots); err != nil {
         t.Errorf("Received error %+v", err)
     }

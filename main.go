@@ -7,8 +7,9 @@ import (
 
 const (
     outputPointerNotSliceError = "output pointer is not of type slice"
-    inputItemsNotSliceError = "item is not of type slice"
+    inputItemsNotSliceError    = "item is not of type slice"
 )
+
 func interfaceToReflection(things interface{}) (reflectedThings []reflect.Value, err error) {
     items := reflect.ValueOf(things)
 
