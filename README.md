@@ -31,7 +31,7 @@ Map
    
        var ids []int
    
-       err := sliceable.MapSlice(foos, func(thing interface{}) interface{} {
+       err := sliceable.Map(foos, func(thing interface{}) interface{} {
           return thing.(Foo).ID
        }, &ids)
 ```
