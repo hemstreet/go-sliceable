@@ -27,15 +27,13 @@ MapSlice
        }
    
        // What you have
-       var food = []Foo{...}
+       var foos = []Foo{...}
    
        var ids []int
    
-       if err := MapSlice(foos, func(thing interface{}) interface{} {
+       err := MapSlice(foos, func(thing interface{}) interface{} {
           return thing.(Foo).ID
-       }, &ids); err != nil {
-           t.Errorf("Received error %+v", err)
-       }
+       }, &ids)
 ```
 
 Reduce
@@ -49,11 +47,9 @@ Reduce
 
     var totalYears int
 
-    if err := Reduce(foos, func(thing interface{}) int {
+    err := Reduce(foos, func(thing interface{}) int {
         return thing.(Foo).Years
-    }, &totalYears); err != nil {
-        t.Errorf("Received error %+v", err)
-    }
+    }, &totalYears)
 ```
 
 Filter
@@ -69,9 +65,7 @@ Filter
 
     var filteredFoos []Foo
 
-    if err := Filter(foos, func(thing interface{}) bool {
+   err := Filter(foos, func(thing interface{}) bool {
         return thing.(Foo).Org  == "Enterprise"
-    }, &filteredFoos); err != nil {
-        t.Errorf("Received error %+v", err)
-    }
+    }, &filteredFoos)
 ```
