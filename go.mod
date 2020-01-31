@@ -1,3 +1,3 @@
-module github.com/hemstreet/helpers
+module github.com/hemstreet/go-sliceable
 
-go 1.14
+go 1.13
