@@ -5,7 +5,7 @@ Install
 ====
 
 ```go
-go get https://github.com/hemstreet/go-sliceable
+go get github.com/hemstreet/go-sliceable
 ```
 
 High Level Theory
