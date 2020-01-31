@@ -26,8 +26,10 @@ func TestMapSlice(t *testing.T) {
         t.Errorf("Received error %+v", err)
     }
 
-    if len(ids) != 4 {
-        t.Errorf("Received %d, Expected %d", len(ids), 4)
+    expectedTotal := 4
+
+    if len(ids) != expectedTotal {
+        t.Errorf("Received %d, Expected %d", len(ids), expectedTotal)
     }
 }
 
@@ -70,8 +72,9 @@ func TestReduce(t *testing.T) {
         t.Errorf("Received error %+v", err)
     }
 
-    if totalYears != 70 {
-        t.Errorf("Received %d, Expected %d", totalYears, 70)
+    expectedTotal := 82
+    if totalYears != expectedTotal {
+        t.Errorf("Received %d, Expected %d", totalYears, expectedTotal)
     }
 }
 
@@ -114,7 +117,8 @@ func TestFilter(t *testing.T) {
         t.Errorf("Received error %+v", err)
     }
 
-    if len(filteredPilots) != 2 {
-        t.Errorf("Received %d, Expected %d", len(filteredPilots), 2)
+    expectedTotal := 2
+    if len(filteredPilots) != expectedTotal {
+        t.Errorf("Received %d, Expected %d", len(filteredPilots), expectedTotal)
     }
 }

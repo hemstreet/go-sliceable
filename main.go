@@ -54,20 +54,19 @@ func Reduce(things interface{}, fn func(thing interface{}) int, outPtr *int) err
         return err
     }
 
-    valuePtr := reflect.ValueOf(outPtr)
-    value := valuePtr.Elem()
-
-    if value.Kind() != reflect.Slice {
-        return errors.New(outputPointerNotSliceError)
-    }
-
+    var total int
 
     for i := range rr {
         item := rr[i]
         result := fn(item.Interface())
+        total += result
 
-        value.Set(reflect.Append(value, reflect.ValueOf(result)))
     }
+
+    valuePtr := reflect.ValueOf(outPtr)
+    value := valuePtr.Elem()
+
+    value.Set(reflect.ValueOf(total))
 
     return nil
 }
