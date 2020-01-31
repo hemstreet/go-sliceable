@@ -58,10 +58,7 @@ Filter
         Org string
     }
 
-    // What you have
-    var foos = []Foo{
-       ...
-    }
+    var foos = []Foo{...}
 
     var filteredFoos []Foo
 
