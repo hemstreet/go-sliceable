@@ -13,13 +13,13 @@ High Level Theory
 Implementation of Map, Reduce and Filter. Accept a slice, function and output pointer.
 
 Basic implementation are: 
-* `MapSlice(sliceInput, mapFunc, outputSlicePtr)`
+* `Map(sliceInput, mapFunc, outputSlicePtr)`
 * `Reduce(sliceInput, reduceFunc, outputPtr)`
 * `Filter(sliceInput, filterFunc, outputSlicePtr)`
 
 Examples
 ===
-MapSlice
+Map
 ``` go
 
        type Foo struct {

@@ -24,7 +24,7 @@ func interfaceToReflection(things interface{}) (reflectedThings []reflect.Value,
     return reflectedThings, nil
 }
 
-func MapSlice(things interface{}, fn func(thing interface{}) interface{}, outPtr interface{}) error {
+func Map(things interface{}, fn func(thing interface{}) interface{}, outPtr interface{}) error {
     rr, err := interfaceToReflection(things)
 
     if err != nil {

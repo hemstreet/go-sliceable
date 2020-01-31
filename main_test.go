@@ -4,7 +4,7 @@ import (
     "testing"
 )
 
-func TestMapSlice(t *testing.T) {
+func TestMap(t *testing.T) {
     type Officer struct {
         ID   int
         Name string
@@ -20,7 +20,7 @@ func TestMapSlice(t *testing.T) {
 
     var ids []int
 
-    if err := MapSlice(officers, func(thing interface{}) interface{} {
+    if err := Map(officers, func(thing interface{}) interface{} {
         return thing.(Officer).ID
     }, &ids); err != nil {
         t.Errorf("Received error %+v", err)
