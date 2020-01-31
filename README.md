@@ -31,7 +31,7 @@ MapSlice
    
        var ids []int
    
-       err := MapSlice(foos, func(thing interface{}) interface{} {
+       err := sliceable.MapSlice(foos, func(thing interface{}) interface{} {
           return thing.(Foo).ID
        }, &ids)
 ```
@@ -47,7 +47,7 @@ Reduce
 
     var totalYears int
 
-    err := Reduce(foos, func(thing interface{}) int {
+    err := sliceable.Reduce(foos, func(thing interface{}) int {
         return thing.(Foo).Years
     }, &totalYears)
 ```
@@ -65,7 +65,7 @@ Filter
 
     var filteredFoos []Foo
 
-   err := Filter(foos, func(thing interface{}) bool {
+   err := sliceable.Filter(foos, func(thing interface{}) bool {
         return thing.(Foo).Org  == "Enterprise"
     }, &filteredFoos)
 ```
